@@ -4,14 +4,14 @@ using UnityEngine.UI;
 public class HealthDisplay : MonoBehaviour
 {
     public PlayerHealth playerHealth;
-    public Text healthText;
+    public TMPro.TextMeshProUGUI healthText;
 
     void Start()
     {
         playerHealth.onHealthChanged.AddListener(UpdateUI); // Suscribirse al evento
     }
 
-    void UpdateUI()
+    public void UpdateUI()
     {
         healthText.text = "Salud: " + playerHealth.health.ToString();
     }
